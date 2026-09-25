@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="public-page register-page auth-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Public navigation"><a href="/services.html">Services</a><a href="/login.html">Login</a><a href="/register.html" class="nav-cta" aria-current="page">Get started</a></nav>
+  </div></header>
+  <main id="main-content" class="container auth-layout"><aside class="auth-intro"><p class="eyebrow">Everyday services, made simpler</p><h2>Good help.<br>A little less hassle.</h2><p>Find services, arrange a visit, and keep everything in one place.</p><div class="auth-benefits"><p><span aria-hidden="true">01</span> Explore local services</p><p><span aria-hidden="true">02</span> Book a time that works</p><p><span aria-hidden="true">03</span> Follow your booking</p></div><a href="/services.html">Explore services <span aria-hidden="true">→</span></a></aside><section class="panel auth-panel">
+    <p class="eyebrow">Your WorkSure account</p><h1>Make room for a little help</h1><p class="page-description">Create your account and get started with WorkSure.</p>
+    <form id="register-form">
+      <div class="form-group"><label for="full_name">Full name</label><input id="full_name" name="full_name" autocomplete="name" maxlength="255" required></div>
+      <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" maxlength="255" required></div>
+      <div class="form-group"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" aria-describedby="password-help" required><small id="password-help">Use at least 8 characters.</small></div>
+      <div class="form-group"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="64"></div>
+      <div class="form-group"><label for="role">Account type</label><select id="role" name="role" required><option value="customer">Customer</option><option value="worker">Worker</option></select></div>
+      <button type="submit">Create account</button>
+      <p id="form-message" class="error" role="status" aria-live="polite"></p>
+    </form>
+    <p>Already registered? <a href="/login.html">Login</a>.</p>
+    <noscript>Enable JavaScript to use authentication.</noscript>
+  </section></main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/public/register.js"></script>
+</body>
+</html>

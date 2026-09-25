@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service details | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="public-page service-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Public navigation"><a href="/services.html" aria-current="page">Services</a><a href="/login.html">Login</a><a href="/register.html" class="nav-cta">Get started</a></nav>
+  </div></header>
+  <main id="main-content" class="container page-content service-detail-layout">
+    <p><a href="/services.html">Back to services</a></p>
+    <p id="service-status" role="status" aria-live="polite">Loading service…</p>
+    <section id="service-details" class="panel" hidden>
+      <h1 id="service-title">Service details</h1>
+      <p id="description" class="details"></p>
+      <p>Category: <span id="category-name"></span></p>
+      <p>Price: <strong id="price"></strong></p>
+      <h2>Provider</h2>
+      <p id="provider"></p><p id="provider-info"></p><p id="verification"></p>
+      <a id="worker-link">View worker profile</a>
+    </section>
+    <section id="booking-section" class="panel" hidden>
+      <h2>Book this service</h2>
+      <p>Choose a date and time in your local time zone and provide the service address.</p>
+      <p id="booking-message" role="status" aria-live="polite">Checking your session…</p>
+      <p><a id="login-link" href="/login.html" hidden>Login to book</a></p>
+      <form id="booking-form">
+        <fieldset id="booking-fields" disabled>
+          <legend>Booking details</legend>
+          <div class="form-group"><label for="scheduled_at">Date and time</label><input id="scheduled_at" name="scheduled_at" type="datetime-local" required></div>
+          <div class="form-group"><label for="address">Service address</label><textarea id="address" name="address" autocomplete="street-address" required></textarea></div>
+          <div class="form-group"><label for="notes">Notes (optional)</label><textarea id="notes" name="notes"></textarea></div>
+          <button type="submit">Create booking</button>
+        </fieldset>
+      </form>
+      <p><a id="dashboard-link" href="/customer/dashboard.html" hidden>Go to customer dashboard</a></p>
+    </section>
+    <noscript>Enable JavaScript to load information from WorkSure.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/public/service.js"></script>
+</body>
+</html>

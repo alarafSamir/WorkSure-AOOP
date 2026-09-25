@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My bookings | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="customer-page customer-bookings-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Customer navigation"><a href="/customer/dashboard.html">Overview</a><a href="/services.html">Browse services</a><a href="/customer/bookings.html" aria-current="page">My bookings</a><a href="/customer/profile.html">My profile</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Customer workspace</p><h1>My bookings</h1><p class="page-description">Keep track of your visits and share feedback on completed work.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="customer-content" hidden>
+      <p>Scheduled times are shown in your local time zone.</p>
+      <p id="bookings-status" role="status" aria-live="polite">Loading bookings…</p>
+      <ul id="bookings-list" class="service-list"></ul>
+      <p><a href="/services.html">Browse services to make a booking</a></p>
+    </div>
+    <noscript>Enable JavaScript to access your customer account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/customer/bookings.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Java / Gradle output
+backend/.gradle/
+backend/build/
+build/
+
+# Local secrets, logs and runtime uploads
+.env
+backend/.env
+*.log
+backend/uploads/
+backend/private-documents/
+
+# Optional documentation generator caches
+__pycache__/
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backups
+worksure-backups/
+*.zip
+*.tar.gz
+
+# Temporary files
+tmp/
+temp/

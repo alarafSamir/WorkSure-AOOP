@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worker profile | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="public-page worker-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Public navigation"><a href="/services.html" aria-current="page">Services</a><a href="/login.html">Login</a><a href="/register.html" class="nav-cta">Get started</a></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <p><a href="/services.html">Back to services</a></p>
+    <p id="worker-status" role="status" aria-live="polite">Loading worker…</p>
+    <div id="worker-details" hidden>
+      <section class="panel">
+        <h1 id="worker-name">Worker profile</h1>
+        <p id="headline"></p><p id="bio" class="details"></p><p id="worker-info"></p><p id="verification"></p>
+      </section>
+      <section aria-labelledby="services-heading">
+        <h2 id="services-heading">Services</h2>
+        <ul id="worker-services" class="service-list"></ul>
+        <p id="services-empty" hidden>No active services available.</p>
+      </section>
+      <section aria-labelledby="reviews-heading">
+        <h2 id="reviews-heading">Customer reviews</h2>
+        <ul id="worker-reviews" class="service-list"></ul>
+        <p id="reviews-empty" hidden>No reviews yet.</p>
+      </section>
+    </div>
+    <noscript>Enable JavaScript to load information from WorkSure.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/public/worker.js"></script>
+</body>
+</html>

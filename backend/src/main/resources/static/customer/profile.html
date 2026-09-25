@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My profile | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="customer-page customer-profile-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Customer navigation"><a href="/customer/dashboard.html">Overview</a><a href="/services.html">Browse services</a><a href="/customer/bookings.html">My bookings</a><a href="/customer/profile.html" aria-current="page">My profile</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Customer workspace</p><h1>My profile</h1><p class="page-description">Keep your contact details up to date for your next booking.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="customer-content" hidden>
+      <section class="panel">
+        <p>Email: <span id="profile-email"></span></p>
+        <p>Role: <span class="status-badge" data-state="role" id="profile-role"></span></p>
+        <form id="profile-form">
+          <fieldset id="profile-fields" disabled>
+            <legend>Contact information</legend>
+            <div class="form-group"><label for="full_name">Full name</label><input id="full_name" name="full_name" autocomplete="name" maxlength="255" required></div>
+            <div class="form-group"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="64"></div>
+            <div class="form-group"><label for="address">Address (optional)</label><textarea id="address" name="address" autocomplete="street-address"></textarea></div>
+            <div class="form-group"><label for="city">City (optional)</label><input id="city" name="city" autocomplete="address-level2" maxlength="128"></div>
+            <div class="form-group"><label for="country">Country (optional)</label><input id="country" name="country" autocomplete="country-name" maxlength="128"></div>
+            <button type="submit">Save profile</button>
+          </fieldset>
+          <p id="profile-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+    <noscript>Enable JavaScript to access your customer account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/customer/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My services | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="worker-page worker-services-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Worker navigation"><a href="/worker/dashboard.html">Overview</a><a href="/worker/jobs.html">My jobs</a><a href="/worker/services.html" aria-current="page">My services</a><a href="/worker/profile.html">My profile</a><a href="/worker/verification.html">Verification</a><a href="/worker/reviews.html">Reviews</a><a href="/services.html">Browse services</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Worker workspace</p><h1>My services</h1><p class="page-description">Create clear listings and keep your services up to date.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="worker-content" hidden>
+      <section class="panel">
+        <h2 id="form-heading">Create service</h2>
+        <form id="service-form"><fieldset id="service-fields" disabled>
+          <legend>Service information</legend>
+          <div class="form-group"><label for="category_id">Category</label><select id="category_id" name="category_id" required><option value="">Select a category</option></select><small>Category is selected when creating a service; it cannot be changed here afterward.</small></div>
+          <div class="form-group"><label for="title">Title</label><input id="title" name="title" maxlength="255" required></div>
+          <div class="form-group"><label for="description">Description</label><textarea id="description" name="description" required></textarea></div>
+          <div class="form-group"><label for="base_price">Price (BDT)</label><input id="base_price" name="base_price" type="number" min="0.01" max="99999999.99" step="0.01" required></div>
+          <div class="form-group"><label for="duration_minutes">Duration (minutes)</label><input id="duration_minutes" name="duration_minutes" type="number" min="1" max="4294967295" step="1" value="60" required></div>
+          <div class="form-group"><label for="tags">Tags (optional)</label><input id="tags" name="tags" maxlength="512"></div>
+          <div class="form-group"><label for="is_active">Visibility</label><select id="is_active" name="is_active" disabled><option value="1">Active</option><option value="0">Inactive</option></select><small>New services are active. Edit a service to change its visibility.</small></div>
+          <button id="save-service" type="submit">Create service</button><button id="cancel-edit" type="button" hidden>Cancel edit</button>
+        </fieldset></form>
+        <p id="service-message" role="status" aria-live="polite"></p>
+      </section>
+      <section><h2>Your listings</h2><p id="services-status" role="status">Loading services…</p><ul id="services-list" class="service-list"></ul></section>
+    </div>
+    <noscript>Enable JavaScript to use your worker account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/worker/services.js"></script>
+</body>
+</html>

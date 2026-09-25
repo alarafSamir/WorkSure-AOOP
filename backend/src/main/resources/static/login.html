@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="public-page login-page auth-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Public navigation"><a href="/services.html">Services</a><a href="/login.html" aria-current="page">Login</a><a href="/register.html" class="nav-cta">Get started</a></nav>
+  </div></header>
+  <main id="main-content" class="container auth-layout"><aside class="auth-intro"><p class="eyebrow">Everyday services, made simpler</p><h2>Good help.<br>A little less hassle.</h2><p>Find services, arrange a visit, and keep everything in one place.</p><div class="auth-benefits"><p><span aria-hidden="true">01</span> Explore local services</p><p><span aria-hidden="true">02</span> Book a time that works</p><p><span aria-hidden="true">03</span> Follow your booking</p></div><a href="/services.html">Explore services <span aria-hidden="true">→</span></a></aside><section class="panel auth-panel">
+    <p class="eyebrow">Your WorkSure account</p><h1>Welcome back</h1><p class="page-description">Log in to manage your bookings, services, and account.</p>
+    <form id="login-form">
+      <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" required></div>
+      <div class="form-group"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+      <button type="submit">Login</button>
+      <p id="form-message" class="error" role="status" aria-live="polite"></p>
+    </form>
+    <p>New to WorkSure? <a href="/register.html">Create an account</a>.</p>
+    <noscript>Enable JavaScript to use authentication.</noscript>
+  </section></main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/public/login.js"></script>
+</body>
+</html>

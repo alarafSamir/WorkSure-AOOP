@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users and workers | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page admin-users-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Admin navigation"><a href="/admin/dashboard.html">Overview</a><a href="/admin/users.html" aria-current="page">Users</a><a href="/admin/bookings.html">Bookings</a><a href="/admin/verification.html">Verification</a><a href="/admin/reviews.html">Reviews</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Administration</p><h1>Users and workers</h1><p class="page-description">View marketplace accounts and manage access.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="content" hidden>
+      <p id="action-message" role="status" aria-live="polite"></p>
+      <section><h2>Users</h2><p id="users-status"></p><ul id="users-list" class="service-list"></ul>
+        <nav aria-label="User pages"><button id="previous" type="button">Previous</button>
+          <span id="page-number"></span><button id="next" type="button">Next</button></nav>
+      </section>
+      <section><h2>Workers</h2><p id="workers-status"></p><ul id="workers-list" class="service-list"></ul></section>
+    </div>
+    <noscript>Enable JavaScript to use your account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/admin/users.js"></script>
+</body>
+</html>

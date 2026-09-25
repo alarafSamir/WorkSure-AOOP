@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin dashboard | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page admin-dashboard-page dashboard-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Admin navigation"><a href="/admin/dashboard.html" aria-current="page">Overview</a><a href="/admin/users.html">Users</a><a href="/admin/bookings.html">Bookings</a><a href="/admin/verification.html">Verification</a><a href="/admin/reviews.html">Reviews</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Administration</p><h1>Admin dashboard</h1><p class="page-description">An overview of your marketplace and the people who use it.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="content" class="dashboard-layout" hidden>
+      <section class="panel identity-panel"><p class="eyebrow">Your account</p><h2>Welcome back</h2>
+        <p>Name: <span id="user-name"></span></p><p>Email: <span id="user-email"></span></p>
+        <p>Role: <span class="status-badge" data-state="role" id="user-role"></span></p>
+      </section>
+      <section class="panel"><h2>Platform summary</h2><ul id="totals"></ul></section>
+      <section class="quick-section"><h2>Quick access</h2><div class="quick-grid"><a class="quick-card" href="/admin/users.html"><strong>Users & workers<span aria-hidden="true">↗</span></strong><span>View accounts and manage access.</span></a><a class="quick-card" href="/admin/bookings.html"><strong>Platform bookings<span aria-hidden="true">↗</span></strong><span>Follow bookings across the marketplace.</span></a><a class="quick-card" href="/admin/verification.html"><strong>Worker verification<span aria-hidden="true">↗</span></strong><span>Review documents and verification status.</span></a><a class="quick-card" href="/admin/reviews.html"><strong>Customer reviews<span aria-hidden="true">↗</span></strong><span>Read feedback from the marketplace.</span></a></div></section>
+    </div>
+    <noscript>Enable JavaScript to use your account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/admin/dashboard.js"></script>
+</body>
+</html>

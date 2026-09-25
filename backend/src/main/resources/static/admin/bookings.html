@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Platform bookings | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page admin-bookings-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Admin navigation"><a href="/admin/dashboard.html">Overview</a><a href="/admin/users.html">Users</a><a href="/admin/bookings.html" aria-current="page">Bookings</a><a href="/admin/verification.html">Verification</a><a href="/admin/reviews.html">Reviews</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Administration</p><h1>Platform bookings</h1><p class="page-description">A clear, read-only view of bookings across WorkSure.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="content" hidden>
+      <p>The latest 200 bookings, shown for reference.</p>
+      <p id="bookings-status"></p><ul id="bookings-list" class="service-list"></ul>
+    </div>
+    <noscript>Enable JavaScript to use your account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/admin/bookings.js"></script>
+</body>
+</html>

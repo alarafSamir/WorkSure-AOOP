@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorkSure | Service Marketplace</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="public-page index-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+      <nav aria-label="Public navigation"><a href="/services.html">Services</a><a href="/login.html">Login</a><a href="/register.html" class="nav-cta">Get started</a></nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section class="intro hero" aria-labelledby="welcome-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">Your everyday service marketplace</p>
+        <h1 id="welcome-heading">A helping hand.<br><span>For everyday life.</span></h1>
+        <p>From a cleaner home to care for the ones you love, find the right service and make your next booking with WorkSure.</p>
+        <div class="hero-actions"><a class="button" href="/services.html">Explore services <span aria-hidden="true">→</span></a><a class="button button-secondary" href="/register.html">Create an account</a></div>
+        <div class="hero-note"><span aria-hidden="true">✓</span> Browse services. Meet providers. Book your visit.</div>
+      </div>
+      <div class="hero-visual"><img src="/images/cleaning.jpg" alt="A cleaning team caring for an office space" width="736" height="736" fetchpriority="high"><div class="hero-caption"><span class="caption-icon" aria-hidden="true">✓</span><div><strong>A little help goes a long way</strong><span>Services for your home, family &amp; workplace</span></div></div></div>
+    </section>
+
+    <section class="category-section" aria-labelledby="categories-heading">
+      <div class="section-heading"><div><p class="eyebrow">Find your kind of help</p><h2 id="categories-heading">Explore our services</h2></div><a href="/services.html">View all services <span aria-hidden="true">→</span></a></div>
+      <p id="category-status" role="status" aria-live="polite">Loading categories…</p>
+      <ul id="category-list"></ul>
+      <noscript>Enable JavaScript to load service categories.</noscript>
+    </section>
+  </main>
+
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+
+  <script type="module">
+    import { apiFetch } from '/js/api.js';
+    import { serviceImage } from '/js/ui.js';
+
+    const status = document.querySelector('#category-status');
+    const list = document.querySelector('#category-list');
+
+    async function loadCategories() {
+      try {
+        const data = await apiFetch('/services/categories');
+        if (!Array.isArray(data.majors)) {
+          throw new Error('The server returned an unexpected category list.');
+        }
+
+        for (const category of data.majors) {
+          const item = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `/services.html?category=${encodeURIComponent(category.slug)}`;
+          const photo = serviceImage(category.slug);
+          const name = document.createElement('strong');
+          name.textContent = category.name;
+          if (photo) link.append(photo);
+          link.append(name);
+          item.append(link);
+          list.appendChild(item);
+        }
+
+        status.textContent = data.majors.length
+          ? `${data.majors.length} service categories available.`
+          : 'No service categories are available yet.';
+      } catch (error) {
+        status.textContent = `Could not load categories. ${error.message}`;
+        status.classList.add('error');
+      }
+    }
+
+    loadCategories();
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worker profile | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="worker-page worker-profile-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Worker navigation"><a href="/worker/dashboard.html">Overview</a><a href="/worker/jobs.html">My jobs</a><a href="/worker/services.html">My services</a><a href="/worker/profile.html" aria-current="page">My profile</a><a href="/worker/verification.html">Verification</a><a href="/worker/reviews.html">Reviews</a><a href="/services.html">Browse services</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Worker workspace</p><h1>Worker profile</h1><p class="page-description">Help customers get to know you and the work you do.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="worker-content" hidden>
+      <section class="panel">
+        <p>Name: <span id="user-name"></span></p><p>Email: <span id="user-email"></span></p><p id="verification"></p>
+        <form id="profile-form"><fieldset id="profile-fields" disabled>
+          <legend>Professional information</legend>
+          <div class="form-group"><label for="headline">Headline</label><input id="headline" name="headline" maxlength="255" required></div>
+          <div class="form-group"><label for="bio">About your work</label><textarea id="bio" name="bio" required></textarea></div>
+          <div class="form-group"><label for="hourly_rate">Hourly rate (BDT)</label><input id="hourly_rate" name="hourly_rate" type="number" min="0" max="99999999.99" step="0.01" required></div>
+          <div class="form-group"><label for="service_radius_km">Service radius (km)</label><input id="service_radius_km" name="service_radius_km" type="number" min="0" max="4294967295" step="1" required></div>
+          <div class="form-group"><label for="years_experience">Years of experience</label><input id="years_experience" name="years_experience" type="number" min="0" max="255" step="1" required></div>
+          <button type="submit">Save profile</button>
+        </fieldset><p id="profile-message" role="status" aria-live="polite"></p></form>
+      </section>
+    </div>
+    <noscript>Enable JavaScript to use your worker account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/worker/profile.js"></script>
+</body>
+</html>

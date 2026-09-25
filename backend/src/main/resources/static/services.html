@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="public-page services-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Public navigation"><a href="/services.html" aria-current="page">Services</a><a href="/login.html">Login</a><a href="/register.html" class="nav-cta">Get started</a></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">The WorkSure marketplace</p><h1>Browse services</h1><p class="page-description">Find the right help for your home, family, or workplace.</p></div>
+    <form action="/services.html" method="get" class="filter-form panel">
+      <div class="form-group"><label for="category">Category</label><select id="category" name="category"><option value="">All categories</option></select></div>
+      <button type="submit">Filter services</button>
+      <a href="/services.html">Clear filter</a>
+    </form>
+    <p id="categories-status" role="status">Loading categories…</p>
+    <p id="services-status" role="status" aria-live="polite">Loading services…</p>
+    <ul id="services-list" class="service-list"></ul>
+    <nav id="pagination" class="pagination" aria-label="Service pages"></nav>
+    <noscript>Enable JavaScript to load information from WorkSure.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/public/services.js"></script>
+</body>
+</html>

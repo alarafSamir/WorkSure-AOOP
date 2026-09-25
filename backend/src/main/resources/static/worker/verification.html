@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My verification documents | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="worker-page worker-verification-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Worker navigation"><a href="/worker/dashboard.html">Overview</a><a href="/worker/jobs.html">My jobs</a><a href="/worker/services.html">My services</a><a href="/worker/profile.html">My profile</a><a href="/worker/verification.html" aria-current="page">Verification</a><a href="/worker/reviews.html">Reviews</a><a href="/services.html">Browse services</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Worker workspace</p><h1>My verification documents</h1><p class="page-description">Submit your documents and follow their review status.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="content" hidden>
+      <section class="panel"><h2>Verification status</h2><p id="verification-status"></p>
+        <p>You are verified when at least one of your documents is approved.</p>
+      </section>
+      <section class="panel"><h2>Submit a document</h2>
+        <p>Choose an NID, passport, license, certificate or another supporting document.
+          JPG, JPEG, PNG, WEBP or PDF; maximum 8 MB. Only you and admins can download your documents.</p>
+        <form id="upload-form"><fieldset id="upload-fields">
+          <div class="form-group"><label for="doc-type">Document type</label>
+            <select id="doc-type" name="doc_type" required>
+              <option value="nid">NID</option><option value="passport">Passport</option><option value="license">License</option>
+              <option value="certificate">Certificate</option><option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="document-file">Document file</label>
+            <input id="document-file" name="file" type="file" accept=".jpg,.jpeg,.png,.webp,.pdf" required>
+          </div><button type="submit">Upload document</button>
+        </fieldset></form>
+        <p id="upload-message" role="status" aria-live="polite"></p>
+      </section>
+      <section><h2>Submitted documents</h2><button id="refresh" type="button">Refresh status</button>
+        <p id="documents-status" role="status"></p><ul id="documents-list" class="service-list"></ul>
+      </section>
+    </div>
+    <noscript>Enable JavaScript to use your account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/worker/verification.js"></script>
+</body>
+</html>

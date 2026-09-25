@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worker verification | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page admin-verification-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Admin navigation"><a href="/admin/dashboard.html">Overview</a><a href="/admin/users.html">Users</a><a href="/admin/bookings.html">Bookings</a><a href="/admin/verification.html" aria-current="page">Verification</a><a href="/admin/reviews.html">Reviews</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Administration</p><h1>Worker verification</h1><p class="page-description">Review submitted documents and manage worker verification.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="content" hidden>
+      <p>A worker is verified when at least one document is approved. Rejecting another document does not remove that approval.</p>
+      <div class="form-group"><label for="status-filter">Document status</label>
+        <select id="status-filter"><option value="pending">Pending</option><option value="all">All documents</option>
+          <option value="approved">Approved</option><option value="rejected">Rejected</option></select>
+      </div>
+      <button id="refresh" type="button">Refresh documents</button>
+      <p id="action-message" role="status" aria-live="polite"></p>
+      <p id="documents-status"></p><ul id="documents-list" class="service-list"></ul>
+    </div>
+    <noscript>Enable JavaScript to use your account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/admin/verification.js"></script>
+</body>
+</html>

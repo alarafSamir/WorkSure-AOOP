@@ -1,0 +1,96 @@
+{
+  "majors": [
+    {
+      "slug": "cleaning",
+      "name": "Cleaning",
+      "icon": "Sparkles",
+      "image": "cleaning.jpg",
+      "description": "Home, office, and specialty cleaning services.",
+      "subfeatures": [
+        { "slug": "full-home-deep-cleaning", "name": "Full Home Deep Cleaning", "image": "full_home_deep_cleaning.jpg", "description": "Whole-home deep clean including floors, surfaces, and bathrooms." },
+        { "slug": "office-workspace-cleaning", "name": "Office Workspace Cleaning", "image": "office_workspace_cleaning.jpg", "description": "Desks, common areas, and meeting rooms for teams." },
+        { "slug": "kitchen-deep-degreasing", "name": "Kitchen Deep Degreasing", "image": "kitchen_deep_degreasing.jpg", "description": "Appliances, hoods, and heavy grease removal." },
+        { "slug": "sofa-upholstery-shampooing", "name": "Sofa & Upholstery Shampooing", "image": "sofa_upholstery_shampooing.jpg", "description": "Fabric and upholstery refresh for living spaces." },
+        { "slug": "post-construction-cleaning", "name": "Post-Construction Cleaning", "image": "post_construction_cleaning.jpg", "description": "Dust, debris, and finish-ready cleanup after builds." },
+        { "slug": "backyard-and-garden-cleaning", "name": "Backyard & Garden Cleaning", "image": "backyard_and_garden_cleaning.jpg", "description": "Outdoor areas, patios, and garden tidy-up." }
+      ]
+    },
+    {
+      "slug": "electrician",
+      "name": "Electrician",
+      "icon": "Zap",
+      "image": "electrician.jpg",
+      "description": "Licensed electrical repairs, installs, and safety checks.",
+      "subfeatures": [
+        { "slug": "complete-house-re-wiring", "name": "Complete House Re-Wiring", "image": "complete_house_re_wiring.jpg", "description": "Full or partial home rewiring by certified electricians." },
+        { "slug": "short-circuit-troubleshooting", "name": "Short Circuit Troubleshooting", "image": "short_circuit_troubleshooting.jpg", "description": "Diagnose tripped breakers, faults, and unsafe wiring." },
+        { "slug": "ceiling-fan-and-light-installation", "name": "Ceiling Fan & Light Installation", "image": "ceiling_fan_and_light_installation.jpg", "description": "Mount fans, fixtures, and lighting upgrades." },
+        { "slug": "air-conditioner-electrical-wiring", "name": "AC Electrical Wiring", "image": "air_conditioner_electrical_wiring.jpg", "description": "Dedicated lines and safe hookups for AC units." },
+        { "slug": "smart-home-device-setup", "name": "Smart Home Device Setup", "image": "smart_home_device_setup.jpg", "description": "Smart switches, hubs, and automation wiring." },
+        { "slug": "ips-and-generator-maintenance", "name": "IPS & Generator Maintenance", "image": "ips_and_generator_maintenance.jpg", "description": "Backup power systems — install, test, and service." }
+      ]
+    },
+    {
+      "slug": "security",
+      "name": "Security",
+      "icon": "Shield",
+      "image": "security.jpg",
+      "description": "Guards, patrol, and surveillance for homes and businesses.",
+      "subfeatures": [
+        { "slug": "personal-bodyguard-protection", "name": "Personal Bodyguard Protection", "image": "personal_bodyguard_protection.jpg", "description": "Close protection for executives and VIP events." },
+        { "slug": "night-shift-residential-guard", "name": "Night Shift Residential Guard", "image": "night_shift_residential_guard.jpg", "description": "Overnight residential security coverage." },
+        { "slug": "commercial-store-security", "name": "Commercial Store Security", "image": "commercial_store_security.jpg", "description": "Retail and storefront guard services." },
+        { "slug": "private-event-security-guard", "name": "Private Event Security Guard", "image": "private_event_security_guard.jpg", "description": "Crowd and perimeter control for private events." },
+        { "slug": "cctv-camera-system-installation", "name": "CCTV Camera System Installation", "image": "cctv_camera_system_installation.jpg", "description": "Camera placement, cabling, and DVR/NVR setup." },
+        { "slug": "biometric-access-control-setup", "name": "Biometric Access Control Setup", "image": "biometric_access_control_setup.jpg", "description": "Fingerprint and card access for secure entry." },
+        { "slug": "smart-alarm-infrastructure", "name": "Smart Alarm Infrastructure", "image": "smart_alarm_infrastructure.jpg", "description": "Alarm panels, sensors, and monitoring integration." }
+      ]
+    },
+    {
+      "slug": "catering",
+      "name": "Catering",
+      "icon": "UtensilsCrossed",
+      "image": "catering.jpg",
+      "description": "Event meals, corporate catering, and private chefs.",
+      "subfeatures": [
+        { "slug": "wedding-buffet-catering", "name": "Wedding Buffet Catering", "image": "wedding_buffet_catering.jpg", "description": "Full buffet menus for weddings and receptions." },
+        { "slug": "corporate-lunch-catering", "name": "Corporate Lunch Catering", "image": "corporate_lunch_catering.jpg", "description": "Office lunches and recurring team meal plans." },
+        { "slug": "birthday-party-finger-food", "name": "Birthday Party Finger Food", "image": "birthday_party_finger_food.jpg", "description": "Bite-sized menus for birthdays and celebrations." },
+        { "slug": "private-home-chef-experience", "name": "Private Home Chef Experience", "image": "private_home_chef_experience.jpg", "description": "In-home chef for intimate dining experiences." },
+        { "slug": "barbecue-grill-special", "name": "Barbecue Grill Special", "image": "barbecue_grill_special.jpg", "description": "Outdoor BBQ and grill catering packages." },
+        { "slug": "religious-festival-feast", "name": "Religious Festival Feast", "image": "religious_festival_feast.jpg", "description": "Large-format feasts for religious gatherings." }
+      ]
+    },
+    {
+      "slug": "babysitting",
+      "name": "Babysitting",
+      "icon": "Baby",
+      "image": "babysitting.jpg",
+      "description": "Trusted childcare at home — daytime, evening, and emergency.",
+      "subfeatures": [
+        { "slug": "full-time-daytime-nanny", "name": "Full-Time Daytime Nanny", "image": "full_time_daytime_nanny.jpg", "description": "Regular weekday nanny care for young children." },
+        { "slug": "after-school-homework-helper", "name": "After-School Homework Helper", "image": "after_school_homework_helper.jpg", "description": "Pickup, supervision, and homework support." },
+        { "slug": "weekend-night-babysitter", "name": "Weekend Night Babysitter", "image": "weekend_night_babysitter.jpg", "description": "Evening and weekend date-night sitting." },
+        { "slug": "infant-care-specialist", "name": "Infant Care Specialist", "image": "infant_care_specialist.jpg", "description": "Newborn and infant-focused care providers." },
+        { "slug": "special-needs-child-care", "name": "Special Needs Child Care", "image": "special_needs_child_care.jpg", "description": "Experienced carers for children with special needs." },
+        { "slug": "emergency-on-call-care", "name": "Emergency On-Call Care", "image": "emergency_on_call_care.jpg", "description": "Short-notice childcare when plans change." }
+      ]
+    },
+    {
+      "slug": "pet-care",
+      "name": "Pet Care",
+      "icon": "PawPrint",
+      "image": "pet_caring.jpg",
+      "description": "Walking, sitting, grooming, and vet support for pets.",
+      "subfeatures": [
+        { "slug": "dog-walking-and-exercise", "name": "Dog Walking & Exercise", "image": "dog_walking_and_exercise.jpg", "description": "Daily walks and active play sessions." },
+        { "slug": "at-home-pet-sitting", "name": "At-Home Pet Sitting", "image": "at_home_pet_sitting.jpg", "description": "In-home companionship while you are away." },
+        { "slug": "basic-pet-grooming-and-bathing", "name": "Basic Pet Grooming & Bathing", "image": "basic_pet_grooming_and_bathing.jpg", "description": "Wash, brush, and basic coat maintenance." },
+        { "slug": "overnight-pet-boarding", "name": "Overnight Pet Boarding", "image": "overnight_pet_boarding.jpg", "description": "Overnight stays in a carer's home or facility." },
+        { "slug": "pet-vet-appointment-escort", "name": "Pet Vet Appointment Escort", "image": "pet_vet_appointment_escort.jpg", "description": "Transport and assistance at vet visits." },
+        { "slug": "puppy-training-companion", "name": "Puppy Training Companion", "image": "puppy_training_companion.jpg", "description": "Basic training support and socialization walks." },
+        { "slug": "aquarium-and-exotic-care", "name": "Aquarium & Exotic Care", "image": "aquarium_and_exotic_care.jpg", "description": "Specialist care for fish, birds, and exotic pets." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer dashboard | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="customer-page customer-dashboard-page dashboard-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Customer navigation"><a href="/customer/dashboard.html" aria-current="page">Overview</a><a href="/services.html">Browse services</a><a href="/customer/bookings.html">My bookings</a><a href="/customer/profile.html">My profile</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Customer workspace</p><h1>Customer dashboard</h1><p class="page-description">Your bookings, account details, and next steps — all in one place.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="customer-content" class="dashboard-layout" hidden>
+      <section class="panel identity-panel" aria-labelledby="identity-heading">
+        <p class="eyebrow">Your account</p><h2 id="identity-heading">Welcome back</h2>
+        <p>Name: <span id="user-name"></span></p>
+        <p>Email: <span id="user-email"></span></p>
+        <p>Role: <span class="status-badge" data-state="role" id="user-role"></span></p>
+      </section>
+      <section class="panel" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Booking summary</h2>
+        <p id="summary-status" role="status">Loading bookings…</p>
+        <ul id="booking-summary"></ul>
+        <a href="/customer/bookings.html">View my bookings</a>
+      </section>
+      <section class="quick-section"><h2>Quick access</h2><div class="quick-grid"><a class="quick-card" href="/services.html"><strong>Find a service<span aria-hidden="true">↗</span></strong><span>Browse services for your next visit.</span></a><a class="quick-card" href="/customer/bookings.html"><strong>My bookings<span aria-hidden="true">↗</span></strong><span>View progress and review completed work.</span></a><a class="quick-card" href="/customer/profile.html"><strong>My profile<span aria-hidden="true">↗</span></strong><span>Update your contact information.</span></a></div></section>
+    </div>
+    <noscript>Enable JavaScript to access your customer account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/customer/dashboard.js"></script>
+</body>
+</html>

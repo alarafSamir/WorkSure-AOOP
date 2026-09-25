@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worker dashboard | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="worker-page worker-dashboard-page dashboard-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Worker navigation"><a href="/worker/dashboard.html" aria-current="page">Overview</a><a href="/worker/jobs.html">My jobs</a><a href="/worker/services.html">My services</a><a href="/worker/profile.html">My profile</a><a href="/worker/verification.html">Verification</a><a href="/worker/reviews.html">Reviews</a><a href="/services.html">Browse services</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Worker workspace</p><h1>Worker dashboard</h1><p class="page-description">A clear view of your account and the work ahead.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="worker-content" class="dashboard-layout" hidden>
+      <section class="panel identity-panel">
+        <p class="eyebrow">Your account</p><h2>Welcome back</h2>
+        <p>Name: <span id="user-name"></span></p><p>Email: <span id="user-email"></span></p>
+        <p>Role: <span class="status-badge" data-state="role" id="user-role"></span></p>
+      </section>
+      <section class="panel verification-panel"><p class="eyebrow">Worker verification</p><h2>Your verification status</h2><p id="verification"></p><p class="muted">Keep track of your submitted documents and review decisions.</p><a href="/worker/verification.html">View verification <span aria-hidden="true">→</span></a></section>
+      <section class="panel summary-panel"><h2>Job summary</h2><p id="summary-status" role="status">Loading jobs…</p><ul id="job-summary"></ul></section>
+      <section class="quick-section"><h2>Quick access</h2><div class="quick-grid"><a class="quick-card" href="/worker/jobs.html"><strong>My jobs<span aria-hidden="true">↗</span></strong><span>View requests and manage assigned work.</span></a><a class="quick-card" href="/worker/services.html"><strong>My services<span aria-hidden="true">↗</span></strong><span>Create and update your service listings.</span></a><a class="quick-card" href="/worker/profile.html"><strong>My profile<span aria-hidden="true">↗</span></strong><span>Keep your professional details current.</span></a><a class="quick-card" href="/worker/reviews.html"><strong>My reviews<span aria-hidden="true">↗</span></strong><span>Read feedback from your customers.</span></a></div></section>
+    </div>
+    <noscript>Enable JavaScript to use your worker account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/worker/dashboard.js"></script>
+</body>
+</html>

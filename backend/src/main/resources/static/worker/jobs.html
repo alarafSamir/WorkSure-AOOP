@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My jobs | WorkSure</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="worker-page worker-jobs-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-content">
+    <a class="brand" href="/" aria-label="WorkSure home"><span class="brand-mark" aria-hidden="true">W<span>✓</span></span>Work<span class="brand-accent">Sure</span></a>
+    <nav aria-label="Worker navigation"><a href="/worker/dashboard.html">Overview</a><a href="/worker/jobs.html" aria-current="page">My jobs</a><a href="/worker/services.html">My services</a><a href="/worker/profile.html">My profile</a><a href="/worker/verification.html">Verification</a><a href="/worker/reviews.html">Reviews</a><a href="/services.html">Browse services</a><button id="logout" class="button-logout" type="button">Logout</button></nav>
+  </div></header>
+  <main id="main-content" class="container page-content">
+    <div class="page-heading"><p class="eyebrow">Worker workspace</p><h1>My jobs</h1><p class="page-description">Manage your assigned jobs, from the first request to completion.</p></div>
+    <p id="page-status" role="status" aria-live="polite">Checking your session…</p>
+    <div id="worker-content" hidden>
+      <p>Scheduled times are shown in your local time zone.</p>
+      <p id="jobs-status" role="status" aria-live="polite">Loading jobs…</p>
+      <p id="action-message" role="status" aria-live="polite"></p>
+      <ul id="jobs-list" class="service-list"></ul>
+    </div>
+    <noscript>Enable JavaScript to use your worker account.</noscript>
+  </main>
+  <footer class="container site-footer"><span>WorkSure</span><span>Everyday services. One simple place.</span></footer>
+  <script type="module" src="/js/worker/jobs.js"></script>
+</body>
+</html>
