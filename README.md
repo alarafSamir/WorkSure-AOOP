@@ -25,59 +25,97 @@ WorkSure connects customers with service workers. This university project uses *
 - Admins see totals, users/workers, bookings and reviews; ban/unban non-admin accounts; and approve/reject worker documents.
 - The plain frontend intentionally excludes payments, cart, wishlist, chat, notifications and other deferred features. Older backend modules for some of these remain preserved, but are not part of the final UI.
 
-## Run on Fedora/Linux
+## Quick Start
 
-Prerequisites: a full JDK (Java 17 or newer, including `javac`), MariaDB, and a browser. The Gradle wrapper is included; its first run needs internet access to download dependencies.
+Requirements: **Java 17+** (a full JDK including `javac`), **MariaDB**, **Git**, and a **browser**. The **Gradle wrapper is included**; no separate Gradle installation is needed. Its first run needs internet access to download Gradle and dependencies.
 
-### 1. Start MariaDB
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/alarafSamir/WorkSure-AOOP.git
+cd WorkSure-AOOP
+```
+
+### 2. Start MariaDB and create the database
+
+On Fedora/Linux with systemd:
 
 ```bash
 sudo systemctl start mariadb
+mariadb -u root -p
 ```
 
-Optional: `sudo systemctl enable mariadb` starts it automatically after reboot.
-
-### 2. Check database configuration
-
-The current project uses database `worksure-aoop`. Connection settings are in `backend/src/main/resources/application.properties`: `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password`. Use credentials valid on your computer. The existing local configuration can be used as-is on the original project machine.
-
-For a new installation, open `mariadb -u root -p` and run the following, choosing your own password:
+At the MariaDB prompt:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS `worksure-aoop`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER IF NOT EXISTS 'worksure'@'localhost' IDENTIFIED BY 'choose-your-password';
-GRANT ALL PRIVILEGES ON `worksure-aoop`.* TO 'worksure'@'localhost';
+EXIT;
 ```
 
-Set the application's database username/password to match. Alternatively, Spring Boot accepts `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, and `SPRING_DATASOURCE_PASSWORD` environment variables. Do not import a fresh schema over a database containing your project records. On an empty database, the application initializes its schema and seed data automatically.
+Optional: `sudo systemctl enable mariadb` starts MariaDB automatically after reboot. On an empty database, the application initializes its schema and seed data automatically. Do not import a fresh schema over existing project records.
 
-### 3. Run Spring Boot
+### 3. Configure credentials
 
-From this machine's project directory:
+The database is **`worksure-aoop`**. In `backend/src/main/resources/application.properties`, the defaults are:
+
+```properties
+spring.datasource.username=root
+spring.datasource.password=${DB_PASSWORD:}
+app.jwt-secret=${JWT_SECRET:change-me}
+```
+
+In the terminal where you will run the application, set your own values:
 
 ```bash
-cd /home/samir/Documents/worksure/backend
+export DB_PASSWORD=your_mariadb_password
+export JWT_SECRET=your-long-secret-key
+```
+
+Replace the placeholders with your MariaDB password and a long, private JWT signing secret. Quote values containing shell special characters. Without these variables, the password is empty and the JWT secret falls back to `change-me`; set them explicitly.
+
+The default connection uses MariaDB's `root` account over TCP. If your installation uses socket-only root authentication, use a database account with privileges on `worksure-aoop` and set `SPRING_DATASOURCE_USERNAME` to that account's name. Set `DB_PASSWORD` to its password.
+
+### 4. Run Spring Boot
+
+From the repository root, in the same terminal:
+
+```bash
+cd backend
 ./gradlew bootRun
 ```
 
-If your copy lives elsewhere, change the `cd` path. Keep this terminal open. Stop the server with Ctrl+C.
+Keep the terminal open; stop the server with Ctrl+C.
 
-### 4. Open the application
+### 5. Open the application
 
-Open **http://localhost:5000**. Health check: **http://localhost:5000/health**.
+- Application: [http://localhost:5000](http://localhost:5000)
+- Health check: [http://localhost:5000/health](http://localhost:5000/health)
 
-Do not open the HTML files directly from disk: their `/api` requests need the Spring Boot server.
+Do not open HTML files directly from disk: their `/api` requests need the Spring Boot server.
 
-### Build a runnable JAR
+### Build and run a JAR
+
+From the repository root, with the environment variables above set:
 
 ```bash
-cd /home/samir/Documents/worksure/backend
+cd backend
 ./gradlew clean build
 java -jar build/libs/worksure-backend-1.0.0.jar
 ```
 
-Stop `bootRun` before starting the JAR. Always run from `backend/` so relative upload storage paths point to the same files. The preserved real-time backend also starts port 9092; the plain UI does not use it. Nothing needs port 5173.
+If already in `backend/`, skip `cd backend`. Stop `bootRun` before starting the JAR. Run the JAR from `backend/` so relative upload paths use the same files. The preserved real-time backend also uses port 9092; the plain UI does not use it. Nothing needs port 5173.
+
+## Run Tests
+
+From the repository root (skip `cd backend` if already there):
+
+```bash
+cd backend
+./gradlew clean test
+```
+
+Controller request-object and request compatibility tests exist under `backend/src/test/java/`. They cover request binding, validation, partial updates, and selected controller rules using mocked dependencies. They do not replace live MariaDB/API regression checks. The HTML test report is generated at `backend/build/reports/tests/test/index.html`.
 
 ## Demo accounts
 
@@ -109,15 +147,15 @@ Client-side role redirects make navigation easier; backend authorization remains
 ## Project structure
 
 ```text
-worksure/
+WorkSure-AOOP/
 ├── backend/
 │   ├── build.gradle, settings.gradle, gradlew, gradlew.bat, gradle/
 │   ├── src/main/java/com/worksure/
-│   │   ├── web/          # REST controllers and API errors
+│   │   ├── web/          # REST controllers, request/ DTOs, and API errors
 │   │   ├── security/     # JWT, authenticated user, role checks
 │   │   ├── db/           # JDBC helper
 │   │   ├── storage/      # Public uploads and private verification files
-│   │   ├── config/, seed/, util/, realtime/
+│   │   ├── config/, seed/, util/, socket/
 │   │   └── WorkSureApplication.java
 │   ├── src/main/resources/
 │   │   ├── application.properties, schema.sql, service-catalog.json
@@ -128,6 +166,7 @@ worksure/
 │   │       ├── worker/   # Dashboard, jobs, services, profile, verification, reviews
 │   │       ├── admin/    # Dashboard, users, bookings, verification, reviews
 │   │       ├── css/, js/, images/, favicon.svg, icons.svg
+│   ├── src/test/java/   # Controller request and compatibility tests
 │   ├── uploads/         # Runtime public images
 │   └── private-documents/ # Runtime private documents; back up with DB
 ├── database/            # Preserved SQL setup files and service catalog
@@ -155,7 +194,6 @@ Be precise: this project uses JDBC and Map-based query results, not JPA entities
 - Missing static files currently return HTTP 500 rather than 404 through the existing global error handler. Private documents are still protected.
 - A service with bookings may fail deletion because of database constraints; the UI shows the backend error.
 - Review creation and rating aggregation follow the existing backend implementation and are not one transaction; the duplicate pre-check can race under concurrent submissions. No backend review redesign was made.
-- The Gradle test task currently has no Java test sources. Final browser/API tests and retained test data are documented in `docs/final-migration-report.md`.
 - Old backend integrations and their configuration remain preserved. They are not frontend requirements.
 
-See [the final migration report](docs/final-migration-report.md) for changes, tests, API coverage and test records. The original project and the pre-cleanup snapshot are backed up outside the repository under `/home/samir/Documents/worksure-backups/` on the original machine.
+See [the final migration report](docs/final-migration-report.md) for changes, tests, API coverage and test records. The original project and pre-cleanup snapshot are backed up outside the repository on the original development machine; those backups are not included in a clone.
