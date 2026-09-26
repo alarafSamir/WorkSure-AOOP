@@ -18,4 +18,3 @@ This `controller-request-submission` branch contains the controller/request-obje
 
 This branch intentionally contains only files relevant to the controller/request-object milestone. It is intended for source-code review, not as a standalone full application.
 
-The full WorkSure project, including the UI and other modules, is available on the [main branch](https://github.com/alarafSamir/WorkSure-AOOP/tree/main).
