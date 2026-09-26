@@ -1,0 +1,19 @@
+package com.worksure.web.request;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+/** Request fields only; authorization and business validation remain in the controller. */
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CreatePaymentIntentRequest {
+    private Long bookingId;
+
+    public Long getBookingId() { return bookingId; }
+    @JsonProperty("booking_id")
+    @JsonDeserialize(using = RequestDeserializers.Identifier.class)
+    public void setBookingId(Long bookingId) {
+        this.bookingId = bookingId;
+    }
+
+}
